@@ -53,7 +53,7 @@ public abstract class Doce {
     	
     	}
     
-    public void setValidade(String nome) {
+    public void setValidade(int validade) {
     	this.validade = 3;
     	
     }
