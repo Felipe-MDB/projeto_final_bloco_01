@@ -2,22 +2,30 @@ package projeto_final_bloco_01.model;
 
 public abstract class Doce {
 	
-	
+	private int id;
     private String nome;
     private int tipo; // 1 para Artesanal, 2 para Industrializado
     private float preco;
-    private int validade;
+    
 
-    public Doce( String nome, int tipo, float preco) {
+    public Doce(  int id, String nome, int tipo, float preco) {
        
+    	this.id = id;
         this.nome = nome;
         this.tipo = tipo;
         this.preco = preco;
-        this.validade = 3;
+        
     }
 
     // Getters e Setters
-  
+    public int getId() { 
+    	return id; 
+    	}
+    
+    public void setId(int id) { 
+    	this.id = id; 
+    	}
+   
     public String getNome() {
     	return nome;
     	
@@ -48,24 +56,23 @@ public abstract class Doce {
   	
     	}
     
-    public int getValidade() {
-    	return validade;
+  
     	
-    	}
     
-    public void setValidade(int validade) {
-    	this.validade = 3;
-    	
-    }
     	
 
     // Método que será sobrescrito (Polimorfismo)
     public void visualizar() {
-        String tipoStr = (this.tipo == 1) ? "Artesanal" : "Industrializado";
-        System.out.println("Nome: " + nome);
-        System.out.println("Tipo: " + tipoStr);
-        System.out.println("Preço: R$ " + preco);
+        System.out.println("\n\n***********************************************************");
+        System.out.println("Dados do Produto:");
+        System.out.println("***********************************************************");
+        System.out.println("ID: " + this.id);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Tipo: " + this.tipo);
+        System.out.println("Preço: " + this.preco);
         System.out.println("Validade: Dias " + 3);
     }
+       
+    
 
 }
