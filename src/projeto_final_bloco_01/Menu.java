@@ -28,6 +28,7 @@ public class Menu {
 		    System.out.println("            2 - Listar Todos os Doces                ");
 		    System.out.println("            3 - Atualizar Produto                    ");
 		    System.out.println("            4 - Deletar Produto                      ");
+		    System.out.println("            5 - Procurar Produto                     ");
 		    System.out.println("            0 - Sair                                 ");
 		    System.out.println("                                                     ");
 		    System.out.println("=====================================================");
@@ -80,6 +81,13 @@ public class Menu {
                     keyPress();
                     break;
                     
+                case 5:
+                    System.out.println("Procurar por número\n\n");
+                    listarId();
+                    
+                    keyPress();
+                    break;
+                    
                 default:
                     System.out.println("\nOpção Inválida!\n");
                     break;
@@ -101,6 +109,11 @@ public class Menu {
 	}
 	
 	private static void listarTodos() {
+		
+		doceController.listarTodos();
+	}
+	
+private static void listarId() {
 		
 		doceController.listarTodos();
 	}
