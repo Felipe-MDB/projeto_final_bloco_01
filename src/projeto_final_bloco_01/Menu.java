@@ -2,6 +2,8 @@ package projeto_final_bloco_01;
 
 import java.util.Scanner;
 
+import projeto_final_bloco_01.model.DoceArtesanal;
+
 public class Menu {
 
 	public static void main(String[] args) {
@@ -43,6 +45,7 @@ public class Menu {
             switch (opcao) {
                 case 1:
                     System.out.println("Cadastrar Produto\n\n");
+                    
                     break;
                     
                 case 2:
