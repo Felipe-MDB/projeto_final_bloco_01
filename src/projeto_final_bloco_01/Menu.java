@@ -83,7 +83,7 @@ public class Menu {
                     
                 case 5:
                     System.out.println("Procurar por número\n\n");
-                    listarId();
+                    procurarPorNumero();
                     
                     keyPress();
                     break;
@@ -113,9 +113,11 @@ public class Menu {
 		doceController.listarTodos();
 	}
 	
-private static void listarId() {
+	private static void procurarPorNumero() {
+		System.out.println("Digite o ID do doce:");
+		int id = leia.nextInt();
 		
-		doceController.listarTodos();
+		doceController.procurarPorNumero(id);
 	}
 	
 	private static void cadastrarDoce() {

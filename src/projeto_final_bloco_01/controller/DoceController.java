@@ -14,6 +14,9 @@ public class DoceController implements DoceRepository {
 
 	@Override
 	public void listarTodos() {
+		if (listaDoces.isEmpty()) {
+			System.out.println("A lista de doces está vazia!");
+		}
 		for (var doce : listaDoces) {
 			doce.visualizar();
 		}
@@ -26,7 +29,6 @@ public class DoceController implements DoceRepository {
 		System.out.printf("O produto foi cadastrado com sucesso!", doce.getNome());
 		
 	}
-	
 		
 	@Override
 	public void atualizar(Doce doce) {
@@ -34,7 +36,6 @@ public class DoceController implements DoceRepository {
 		
 		if (buscaDoce != null) {
 			
-		
 			listaDoces.set(listaDoces.indexOf(buscaDoce), doce);
 			doce.visualizar();
 		}else
@@ -43,18 +44,25 @@ public class DoceController implements DoceRepository {
 
 	@Override
 	public void deletar(int numero) {
+		var doce = buscarNaCollection(numero);
+        if (doce != null) {
+            if (listaDoces.remove(doce)) {
+                System.out.println("O doce número " + numero + " foi excluído!");
+            }
+        } else {
+            System.out.println("O doce número " + numero + " não foi encontrado para deletar!");
+        }
 		
 	}
-
-	public void buscarNaCollection(String nome) {
-	    // Lógica para buscar o doce na lista
-	}
-		
-	
 
 	@Override
 	public void procurarPorNumero(int numero) {
-		
+		var doce = buscarNaCollection(numero);
+		if (doce != null) {
+			doce.visualizar();
+		}else {
+			System.out.println("O doce número " + numero + " não foi encontrado!");
+		}
 	}
 	
 	// Método auxiliar para buscar na Collection
